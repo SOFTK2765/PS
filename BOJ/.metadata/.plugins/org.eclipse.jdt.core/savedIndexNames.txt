@@ -1,0 +1,2 @@
+INDEX VERSION 1.127+E:\Utility\Programming\Dev-Cpp save\BOJ\.metadata\.plugins\org.eclipse.jdt.core
+3137641363.index
