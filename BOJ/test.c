@@ -1,8 +1,65 @@
-#include <bits/stdc++.h>
+#include <adxintrin.h>
+#include <ammintrin.h>
+#include <avx2intrin.h>
+#include <avx512cdintrin.h>
+#include <avx512erintrin.h>
+#include <avx512fintrin.h>
+#include <avx512pfintrin.h>
+#include <avxintrin.h>
+#include <bmi2intrin.h>
+#include <bmiintrin.h>
+#include <bmmintrin.h>
+#include <cpuid.h>
+#include <cross-stdarg.h>
+#include <emmintrin.h>
+#include <f16cintrin.h>
+#include <float.h>
+#include <fma4intrin.h>
+#include <fmaintrin.h>
+#include <fxsrintrin.h>
+#include <ia32intrin.h>
+#include <immintrin.h>
+#include <iso646.h>
+#include <lwpintrin.h>
+#include <lzcntintrin.h>
+#include <mm_malloc.h>
+#include <mm3dnow.h>
+#include <mmintrin.h>
+#include <nmmintrin.h>
+#include <omp.h>
+#include <pmmintrin.h>
+#include <popcntintrin.h>
+#include <prfchwintrin.h>
+#include <quadmath.h>
+#include <quadmath_weak.h>
+#include <rdseedintrin.h>
+#include <rtmintrin.h>
+#include <shaintrin.h>
+#include <smmintrin.h>
+#include <stdalign.h>
+#include <stdarg.h>
+#include <stdatomic.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdfix.h>
+#include <stdint.h>
+#include <stdint-gcc.h>
+#include <stdnoreturn.h>
+#include <tbmintrin.h>
+#include <tgmath.h>
+#include <tmmintrin.h>
+#include <unwind.h>
+#include <varargs.h>
+#include <wmmintrin.h>
+#include <x86intrin.h>
+#include <xmmintrin.h>
+#include <xopintrin.h>
+#include <xsaveintrin.h>
+#include <xsaveoptintrin.h>
+#include <xtestintrin.h>
 
 int main()
 {
-    printf("%d", sizeof(long long));
 
     return 0;
 }
