@@ -23,17 +23,13 @@ void DFS(int x, int y)
 
 int main()
 {
-    scanf("%d", &n);
-    for(int i=0;i<n;i++)
-        for(int j=0;j<n;j++)
-            scanf("%1d", &a[i][j]);
-    for(int i=0;i<n;i++)
-        for(int j=0;j<n;j++)
-            if(a[i][j]==1 && !visit[i][j] && ++num) DFS(j,i);
-    printf("%d\n", num);
-    sort(tmp, tmp+num);
-    for(int i=0;i<num;i++)
-        printf("%d\n",tmp[i]);
+    char a = 'a';
+    switch(a)
+    {
+        case 'a':
+            printf("sailsfjlsfl");
+            break;
+    }
 
     return 0;
 }
