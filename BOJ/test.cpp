@@ -2,34 +2,27 @@
 
 using namespace std;
 
-int n, num; 
-bool visit[26][26];
-int a[26][26];
-int tmp[600];
-
-const int dx[4] = {1,-1,0,0};
-const int dy[4] = {0,0,1,-1};
-
-void DFS(int x, int y)
-{
-    visit[y][x] = true;
-    for(int i=0;i<4;i++)
-    {       
-        int nx = x+dx[i], ny = y+dy[i];
-        if(nx>=0 && nx<n && ny>=0 && ny<n && a[ny][nx] == 1 && !visit[ny][nx]) DFS(nx, ny);
-    }
-    tmp[num-1]++;
-}
+const int dx[] = {2, 14, 5, 5, 4, 4};
 
 int main()
 {
-    char a = 'a';
-    switch(a)
-    {
-        case 'a':
-            printf("sailsfjlsfl");
-            break;
-    }
+    string a;
+    getline(cin, a);
+    for(int i=0;i<26;i++)
+        for(int j=0;j<26;j++)
+        {
+            int mv = i;
+            string tmp = a;
+            int l = tmp.length();
+            for(int k=0;k<l;k++)
+                if('a'<=tmp[k] && tmp[k]<='z')
+                {
+                    tmp[k] = (tmp[k]+mv-'a')%26+'a';
+                    mv = (mv+dx[j%6])%26;
+                }
+            if(tmp[46]=='a') cout << tmp << endl;
+        }
+
 
     return 0;
 }
