@@ -4,8 +4,9 @@ using namespace std;
 
 int main()
 {
-    char a = '7';
-    printf("%d", a-'0');
+    int n;
+    scanf("%d", &n);
+    printf("%d", n-1946);
 
     return 0;
 }

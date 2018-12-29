@@ -2,8 +2,10 @@
 
 using namespace std;
 
-string trans[10] = {"ze", "on", "tw", "th", "fo", "fi", "si", "se", "ei", "ni"};
-char a[100][3];
+const string trans[] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+vector<pair<int, string>> a(100);
+
+bool cmp(const pair<int, string> &a, const pair<int, string> &b){return a.second<b.second;}
 
 int main()
 {
@@ -12,21 +14,20 @@ int main()
     int pos = 0;
     for(int i=m;i<=n;i++)
     {
+        a[i].first = i;
         int tmp = i;
-        while(tmp>0)
+        while(tmp)
         {
-            s[i] += [tmp%10]
+            a[i].second = trans[tmp%10]+a[i].second;
+            tmp /= 10;
         }
-        strcpy(a[pos++], )
     }
-    for(int i=0;i<pos;i++)
-        printf("%d ", a[i]);
-    printf("\n");
-    sort(a, a+pos);
-    for(int i=0;i<pos;i++)
+    sort(&a[m], &a[n+1], cmp);
+    int cnt = 0;
+    for(int i=m;i<=n;i++)
     {
-        printf("%d ", revtrans[a[i]/10]*10+revtrans[a[i]%10]);
-        if(i%10==9) printf("\n");
+        printf("%d ", a[i].first);
+        if(++cnt%10==0) printf("\n");
     }
 
     return 0;
