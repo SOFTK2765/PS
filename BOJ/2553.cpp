@@ -6,15 +6,14 @@ int main()
 {
     int n;
     scanf("%d", &n);
-    int res = 1;
+    long long res = 1;
     for(int i=1;i<=n;i++)
     {
         res *= i;
         while(res%10==0) res /= 10;
-        res %= 10;
-        printf("%d : %d\n", i, res);
+        res %= 100000000;
     }
-    printf("%d\n", res);
+    printf("%d\n", res%10);
 
     return 0;
 }
