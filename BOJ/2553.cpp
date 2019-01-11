@@ -11,7 +11,7 @@ int main()
     {
         res *= i;
         while(res%10==0) res /= 10;
-        res %= 100000000;
+        res %= 10;
     }
     printf("%d\n", res%10);
 

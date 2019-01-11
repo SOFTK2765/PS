@@ -4,7 +4,9 @@ using namespace std;
 
 int main()
 {
-    printf("%c%c%c%c%c", 100, 97, 119, 115, 124);
+    int n;
+    scanf("%d", &n);
+    printf("%d", ((n+1)/2)%2);
 
     return 0;
 }
