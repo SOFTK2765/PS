@@ -2,9 +2,18 @@
 
 using namespace std;
 
+pair<int, int> a[10001];
+
 int main()
 {
-    printf("%c%c%c%c%c", 100, 97, 119, 115, 124);
+    int n;
+    scanf("%d", &n);
+    for(int i=0;i<n;i++)
+    {
+        scanf(" %d %d", &a[i].first, &a[i].second);
+    }
+    for(int i=0;i<n;i++)
+        cout << a[i].first << " " << a[i].second << endl;
 
     return 0;
 }
