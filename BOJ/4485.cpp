@@ -4,6 +4,9 @@
 
 using namespace std;
 
+const int dx[] = {1, -1, 0, 0};
+const int dy[] = {0, 0, 1, -1};
+
 int n;
 int a[126][126], d[126][126];
 
@@ -13,28 +16,19 @@ void dijk()
         for(int j=0;j<n;j++)
             d[i][j] = INF;
     d[0][0] = a[0][0];
-    queue<pair<int, pair<int, int>>> q;
-    q.push({a[0][0], {0, 0}});
-    while(!q.empty())
+    priority_queue<pair<int, pair<int, int>>> pq;
+    pq.push({-a[0][0], {0, 0}});
+    while(!pq.empty())
     {
-        int herex = q.front().second.first, herey = q.front().second.second, dist = q.front().first;
-        q.pop();
-        for(int i=0;i<n;i++)
-            for(int j=0;j<n;j++)
-            {
-                int cost = a[i][j];
-                if(dist+cost<d[i][j])
-                {
-                    d[i][j] = dist+cost;
-                    q.push({d[i][j], {j, i}});
-                } 
-            }
-    }
-    for(int i=0;i<n;i++)
-    {
-        for(int j=0;j<n;j++)
-            printf("%d ", d[i][j]);
-        printf("\n");
+        int x = pq.top().second.first, y = pq.top().second.second, dist = -pq.top().first;
+        pq.pop();
+        for(int i=0;i<4;i++)
+        {
+            int nx = x+dx[i], ny = y+dy[i];
+            if(nx<0 || ny<0 || nx>=n || ny>=n || dist+a[ny][nx]>=d[ny][nx]) continue;
+            pq.push({-(dist+a[ny][nx]), {nx, ny}});
+            d[ny][nx] = dist+a[ny][nx];
+        }
     }
 }
 
