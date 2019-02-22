@@ -4,10 +4,9 @@ using namespace std;
 
 int main()
 {
-	FILE *fp=fopen(argv[3],"r");
     int a, b;
     scanf("%d %d", &a, &b);
-    printf("%d", a+b);
+    printf("%d", (int)abs((1.0*a/b-1)*2));
 
     return 0;
 }

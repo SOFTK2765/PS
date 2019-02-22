@@ -13,7 +13,7 @@ int main()
 	for(int i=check; i>=1; i--)
 	{
 		if(r1%i==0 && r2%i==0)
-		{
+		{fsa
 			r1/=i;
 			r2/=i;
 			break;
