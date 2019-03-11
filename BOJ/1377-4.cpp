@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int a[1001], dp[1001];
+int a[500001], dp[500001];
 
 int main()
 {
@@ -14,13 +14,13 @@ int main()
     {
         int mx = 0;
         for(int j=i-1;j>=0;j--)
-            if(a[i]<a[j]) mx = max(mx, dp[j]);
+            if(a[j]<a[i]) mx = max(mx, dp[j]);
         dp[i] = mx+1;
     }
     int mx = 0;
     for(int i=0;i<n;i++)
         mx = max(mx, dp[i]);
-    printf("%d", mx);
+    printf("%d", n-mx+1);
 
     return 0;
 }

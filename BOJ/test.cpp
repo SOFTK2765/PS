@@ -2,15 +2,12 @@
 
 using namespace std;
 
+int a[] = {0, 1, 2};
+
 int main()
 {
-    int a, b;
-    scanf("%d %d", &a, &b);s
-    int tmp = (int)(20.0*a/b);
-    for(int i=0;i<tmp;i++)
-        printf("■");
-    for(int i=0;i<20-tmp;i++)
-        printf("□");
+    for(int i=0;i<3;i++)
+        printf("%d ", i[a]);
 
     return 0;
 }

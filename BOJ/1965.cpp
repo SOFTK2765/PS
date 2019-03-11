@@ -10,17 +10,16 @@ int main()
     scanf("%d", &n);
     for(int i=0;i<n;i++)
         scanf(" %d", &a[i]);
+    int res = 0;
     for(int i=0;i<n;i++)
     {
         int mx = 0;
         for(int j=i-1;j>=0;j--)
-            if(a[i]<a[j]) mx = max(mx, dp[j]);
+            if(a[i]>a[j]) mx = max(mx, dp[j]);
         dp[i] = mx+1;
+        res = max(res, dp[i]);
     }
-    int mx = 0;
-    for(int i=0;i<n;i++)
-        mx = max(mx, dp[i]);
-    printf("%d", mx);
+    printf("%d", res);
 
     return 0;
 }
