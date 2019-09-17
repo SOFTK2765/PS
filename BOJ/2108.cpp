@@ -53,14 +53,15 @@ int main()
 	for(int i=0;i<n;i++)
 		scanf("%d", &a[i]);
 	merge_sort(a, 0, n-1);
+	
 	for(int i=0;i<n;i++)
 		sum+=a[i];
-	printf("%d\n", (int)(((double)sum/n)+0.5));
+	printf("%d\n", (int)(((double)sum/n)+ 0.5 * (sum < 0? -1: 1) ));
 	
 	printf("%d\n", a[(n+1)/2-1]);
 	for(int i=0;i<n;i++)
 		c[a[i]+4000]++;
-	for(int i=0;i<8001;i++)
+	for(int i=1;i<8001;i++)
 	{
 		if(c[max]<c[i])
 		{

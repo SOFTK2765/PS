@@ -26,11 +26,11 @@ int main()
         scanf("%d", &n);
         for(int i=0;i<n;i++)
             scanf(" %d", &a[i]);
-        int sum = 0;
+        long long sum = 0;
         for(int i=0;i<n-1;i++)
             for(int j=i+1;j<n;j++)
                 sum += gcd(a[i], a[j]);
-        printf("%d\n", sum);
+        printf("%lld\n", sum);
     }
 
     return 0;
