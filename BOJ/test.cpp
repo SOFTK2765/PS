@@ -2,26 +2,20 @@
 
 using namespace std;
 
-int main(){
-    long long l, h;
-    vector<long long> v;
-    vector<long long> ind;
-    scanf("%lld %lld", &l, &h);
-    for(int i=0;i<8;i++){
-        int t;
-        scanf(" %d", &t);
-        v.push_back(t);
-        ind.push_back(0);
-    }
-    for(int i=1;i<8;i++)
-        ind[i] += (long long)v[i]*h;
-    for(int i=0;i<8;i++){
-        double g = (double)l/v[0];
-        ind[i] += v[i]*g;
-    }
-    int cnt = 0;
-    for(int i=1;i<8;i++)
-        if(ind[0]>=ind[i]) cnt++;
-    printf("%d", cnt);
+int a[10][10][10][10];
+
+int main()
+{
+    for(int i=0;i<10;i++)
+        for(int j=0;j<10;j++)
+            for(int k=0;k<10;k++)
+                for(int l=0;l<10;l++)
+                    a[i][j][k][l] = i*1000+j*100+k*10+l;
+    for(int i=0;i<10;i++)
+        for(int j=0;j<10;j++)
+            for(int k=0;k<10;k++)
+                for(int l=0;l<10;l++)
+                    cout << a[i][j][k][l] << endl;
+
     return 0;
 }
