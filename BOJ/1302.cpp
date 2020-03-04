@@ -2,20 +2,26 @@
 
 using namespace std;
 
-char tmp[51];
-
-vector<pair<string, int>> v;
-
 int main()
 {
     int n;
     scanf("%d", &n);
+    map<string, int> mp;
     for(int i=0;i<n;i++)
     {
-        memset(tmp, 0, sizeof(tmp));
-        scanf(" %s", tmp);
-        for(vector::iterator)
+        string tmp;
+        cin >> tmp;
+        mp[tmp]++;
     }
+    int mx = 0;
+    string res = "";
+    for(map<string, int>::iterator it=mp.begin();it!=mp.end();it++)
+        if(mx<it->second)
+        {
+            mx = it->second;
+            res = it->first;
+        }
+    cout << res;
 
     return 0;
 }

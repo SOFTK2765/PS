@@ -2,20 +2,26 @@
 
 using namespace std;
 
-int a[10][10][10][10];
+int a[4][4];
 
 int main()
 {
-    for(int i=0;i<10;i++)
-        for(int j=0;j<10;j++)
-            for(int k=0;k<10;k++)
-                for(int l=0;l<10;l++)
-                    a[i][j][k][l] = i*1000+j*100+k*10+l;
-    for(int i=0;i<10;i++)
-        for(int j=0;j<10;j++)
-            for(int k=0;k<10;k++)
-                for(int l=0;l<10;l++)
-                    cout << a[i][j][k][l] << endl;
+    for(int i=0;i<3;i++)
+        for(int j=0;j<3;j++)
+            a[i][j] = i*3+j;
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+            printf("%d ", a[i][j]);
+        printf("\n");
+    }
+    memset(a[0], 0, sizeof(a[0]));
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+            printf("%d ", a[i][j]);
+        printf("\n");
+    }
 
     return 0;
 }

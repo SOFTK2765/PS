@@ -18,12 +18,20 @@ int main()
     {
         int k, c;
         scanf("%d %d", &k, &c);
-        tuple<int, int, int> res = extEuc(c, k);
-        if(get<0>(res)!=1) res = extEuc(k/get<0>(res), c/get<0>(res));
-        cout << get<0>(res) << " " << get<1>(res) << " " << get<2>(res) << endl;
-        if(0>get<1>(res) && 0>get<2>(res)) printf("%d\b", (get<1>(res)+k)%k);
-        else if(0<get<1>(res) && 0>get<2>(res)) printf("%d\n", get<1>(res));
-        else printf("IMPOSSIBLE\n");
+        tuple<int, int, int> res = extEuc(-k, c);
+        if(get<0>(res)==-1) res = make_tuple(1, -(get<1>(res)), -(get<2>(res)));
+        if(c==1)
+        {
+            if(k+1>1000000000) printf("IMPOSSIBLE\n");
+            else printf("%d\n", k+1);
+        }
+        else if(k==1) printf("1\n");
+        else
+        {
+            if(get<0>(res)!=1) printf("IMPOSSIBLE\n");
+            else if((get<2>(res)<0?(get<2>(res)+k)%k:get<2>(res))>1000000000) printf("IMPOSSIBLE\n");
+            else printf("%d\n", get<2>(res)<0?(get<2>(res)+k)%k:get<2>(res));
+        }
     }
 
     return 0;
