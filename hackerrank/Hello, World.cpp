@@ -4,8 +4,9 @@ using namespace std;
 
 int main()
 {
-	int a = 1, b = 2, c =3, d = 4;
-	printf("%d", min({a, b, c, d}));
+	string s;
+	getline(cin, s);
+	cout << "Hello, World.\n" << s;
 
 	return 0;
 }

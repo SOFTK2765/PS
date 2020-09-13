@@ -30,8 +30,8 @@ int main()
                 bfs.pop();
                 for(int i=0;i<n;i++)
                 {
-                    if(abs(rx-x)+abs(ry-y)<=1000) flag = true;
-                    if(check[i] || abs(a[i].first-x)+abs(a[i].second-y)>1000) continue;
+                    if(abs(rx-x)+abs(ry-y)<1000) flag = true;
+                    if(check[i] || abs(a[i].first-x)+abs(a[i].second-y)>=1000) continue;
                     check[i] = true;
                     bfs.push({a[i].first, a[i].second});
                 }
