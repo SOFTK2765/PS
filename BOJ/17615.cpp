@@ -1,0 +1,2 @@
+#import<bits/stdc++.h>
+using namespace std;int main(){int n,p=0,e=0;string s;cin>>n>>s;map<char,pair<vector<int>,int>>c;while(p<n){char tmp=s[e=p];while(++p<n&&tmp==s[p]);c[tmp].first.push_back(p-e);c[tmp].second+=p-e;}cout<<min({c['B'].second-(s[0]=='R'?0:c['B'].first[0]),c['R'].second-(s[0]=='B'?0:c['R'].first[0]),c['B'].second-(s[n-1]=='R'?0:c['B'].first[c['B'].first.size()-1]),c['R'].second-(s[n-1]=='B'?0:c['R'].first[c['R'].first.size()-1])});}

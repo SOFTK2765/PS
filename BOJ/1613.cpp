@@ -25,6 +25,12 @@ int main()
         d[b][a] = 1;
     }
     floyd();
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+            printf("%d ", d[i][j]);
+        printf("\n");
+    }
     int s;
     scanf(" %d", &s);
     for(int i=0;i<s;i++)
